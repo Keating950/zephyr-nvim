@@ -72,7 +72,7 @@ end
 
 function zephyr.load_syntax()
   local syntax = {
-    Normal = {fg = zephyr.fg,bg=zephyr.bg};
+    Normal = {fg = zephyr.fg,bg=zephyr.none};
     Terminal = {fg = zephyr.fg,bg=zephyr.bg};
     SignColumn = {fg=zephyr.fg,bg=zephyr.bg};
     FoldColumn = {fg=zephyr.fg_alt,bg=zephyr.black};
