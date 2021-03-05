@@ -77,7 +77,7 @@ end
 
 function zephyr.load_syntax()
   local syntax = {
-    Normal = {fg = zephyr.fg,bg=zephyr.none};
+    Normal = {fg = zephyr.fg,bg=zephyr.bg};
     Terminal = {fg = zephyr.fg,bg=zephyr.bg};
     SignColumn = {fg=zephyr.fg,bg=zephyr.bg};
     FoldColumn = {fg=zephyr.fg_alt,bg=zephyr.black};
@@ -95,7 +95,7 @@ function zephyr.load_syntax()
     CursorIM = {fg=zephyr.none,bg=zephyr.none,style='reverse'};
     CursorColumn = {fg=zephyr.none,bg=zephyr.bg_highlight};
     CursorLine = {fg=zephyr.none,bg=zephyr.bg_highlight};
-    LineNr = {fg=zephyr.base4};
+    LineNr = {fg=zephyr.base5};
     CursorLineNr = {fg=zephyr.blue};
     DiffAdd = {fg=zephyr.black,bg=zephyr.dark_green};
     DiffChange = {fg=zephyr.black,bg=zephyr.yellow};
