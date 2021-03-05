@@ -13,7 +13,7 @@ local zephyr = {
   base7      = '#9ca0a4';
   base8      = '#b1b1b1';
 
-  bg = '#282c34';
+  bg = '#282a36';
   bg1 = '#504945';
   bg_popup = '#3E4556';
   bg_highlight  = '#2E323C';
@@ -22,18 +22,23 @@ local zephyr = {
   fg = '#bbc2cf';
   fg_alt  = '#5B6268';
 
-  red = '#ff6c6b';
-  magenta = '#d16d9e';
-  orange = '#da8548';
-  yellow = '#ECBE7B';
+  red = '#e95678';
 
-  green = '#98be65';
-  cyan = '#3bb6c4';
+  magenta = '#d16d9e';
+  orange = '#D98E48';
+  yellow = '#f0c674';
+
+  light_green = '#abcf84';
+  green = '#afd700';
+  dark_green = '#98be65';
+
+  cyan = '#4ad2e0';
   blue = '#51afef';
-  violet = '#a9a1e1';
+  violet = '#af87d7';
+  purple = '#b877db',
   teal = '#1abc9c';
   grey = '#928374';
-  brown = '#666660';
+  brown = '#c78665';
   black = '#000000';
 
   bracket = '#80A0C2';
@@ -80,7 +85,7 @@ function zephyr.load_syntax()
     Folded = {fg=zephyr.grey,bg=zephyr.bg_highlight};
     EndOfBuffer = {fg=zephyr.bg,bg=zephyr.none};
     IncSearch = {fg=zephyr.bg1,bg=zephyr.orange,style=zephyr.none};
-    Search = {fg=zephyr.bg,bg=zephyr.green};
+    Search = {fg=zephyr.bg,bg=zephyr.orange};
     ColorColumn = {fg=zephyr.none,bg=zephyr.bg_highlight};
     Conceal = {fg=zephyr.grey,bg=zephyr.none};
     Cursor = {fg=zephyr.none,bg=zephyr.none,style='reverse'};
@@ -92,7 +97,7 @@ function zephyr.load_syntax()
     CursorLine = {fg=zephyr.none,bg=zephyr.bg_highlight};
     LineNr = {fg=zephyr.base4};
     CursorLineNr = {fg=zephyr.blue};
-    DiffAdd = {fg=zephyr.black,bg=zephyr.green};
+    DiffAdd = {fg=zephyr.black,bg=zephyr.dark_green};
     DiffChange = {fg=zephyr.black,bg=zephyr.yellow};
     DiffDelete = {fg=zephyr.black,bg=zephyr.red};
     DiffText = {fg=zephyr.black,bg=zephyr.fg};
@@ -107,8 +112,8 @@ function zephyr.load_syntax()
     Pmenu = {fg=zephyr.fg,bg=zephyr.bg_popup};
     PmenuSel = {fg=zephyr.base0,bg=zephyr.blue};
     PmenuSelBold = {fg=zephyr.base0,g=zephyr.blue};
-    PmenuSbar = {fg=zephyr.none,bg=zephyr.blue};
-    PmenuThumb = {fg=zephyr.brown,bg=zephyr.brown};
+    PmenuSbar = {fg=zephyr.none,bg=zephyr.base4};
+    PmenuThumb = {fg=zephyr.violet,bg=zephyr.light_green};
     WildMenu = {fg=zephyr.fg,bg=zephyr.green};
     Question = {fg=zephyr.yellow};
     NormalFloat = {fg=zephyr.base8,bg=zephyr.bg_highlight};
@@ -127,15 +132,15 @@ function zephyr.load_syntax()
     debugBreakpoint = {fg=zephyr.bg,bg=zephyr.red};
 
     Boolean = {fg=zephyr.orange};
-    Number = {fg=zephyr.violet};
-    Float = {fg=zephyr.violet};
+    Number = {fg=zephyr.brown};
+    Float = {fg=zephyr.brown};
     PreProc = {fg=zephyr.violet};
     PreCondit = {fg=zephyr.violet};
-    Include = {fg=zephyr.violet};
+    Include = {fg=zephyr.purple};
     Define = {fg=zephyr.violet};
     Conditional = {fg=zephyr.violet};
     Repeat = {fg=zephyr.violet};
-    Keyword = {fg=zephyr.red};
+    Keyword = {fg=zephyr.green};
     Typedef = {fg=zephyr.red};
     Exception = {fg=zephyr.red};
     Statement = {fg=zephyr.red};
@@ -149,8 +154,8 @@ function zephyr.load_syntax()
     Special = {fg=zephyr.yellow};
     SpecialChar = {fg=zephyr.yellow};
     Type = {fg=zephyr.yellow};
-    Function = {fg=zephyr.magenta,style='bold'};
-    String = {fg=zephyr.green};
+    Function = {fg=zephyr.yellow};
+    String = {fg=zephyr.light_green};
     Character = {fg=zephyr.green};
     Constant = {fg=zephyr.cyan};
     Macro = {fg=zephyr.cyan};
@@ -162,25 +167,30 @@ function zephyr.load_syntax()
     Delimiter = {fg=zephyr.fg};
     Ignore = {fg=zephyr.grey};
     Underlined = {fg=zephyr.none,style='underline'};
+  }
+  return syntax
+end
 
-    TSFunction = {fg=zephyr.yellow,style='bold'};
-    TSMethod = {fg=zephyr.yellow,style='bold'};
-    TSKeywordFunction = {fg=zephyr.blue};
-    TSProperty = {fg=zephyr.cyan};
+function zephyr.load_plugin_syntax()
+  local plugin_syntax = {
+    TSFunction = {fg=zephyr.cyan};
+    TSMethod = {fg=zephyr.cyan};
+    TSKeywordFunction = {fg=zephyr.red};
+    TSProperty = {fg=zephyr.yellow};
     TSType = {fg=zephyr.teal};
     TSPunctBracket = {fg=zephyr.bracket};
 
     vimCommentTitle = {fg=zephyr.grey,style='bold'};
     vimLet = {fg=zephyr.orange};
     vimVar = {fg=zephyr.cyan};
-    vimFunction = {fg=zephyr.magenta,style='bold'};
+    vimFunction = {fg=zephyr.magenta};
     vimIsCommand = {fg=zephyr.fg};
     vimCommand = {fg=zephyr.blue};
     vimNotFunc = {fg=zephyr.violet,style='bold'};
     vimUserFunc = {fg=zephyr.yellow,style='bold'};
     vimFuncName= {fg=zephyr.yellow,style='bold'};
 
-    diffAdded = {fg = zephyr.green};
+    diffAdded = {fg = zephyr.dark_green};
     diffRemoved = {fg =zephyr.red};
     diffChanged = {fg = zephyr.blue};
     diffOldFile = {fg = zephyr.yellow};
@@ -196,33 +206,29 @@ function zephyr.load_syntax()
     gitcommitUnmerged = { fg=zephyr.grey};
     gitcommitOnBranch = { fg=zephyr.grey};
     gitcommitArrow  = {fg = zephyr.grey};
-    gitcommitFile  = {fg = zephyr.green};
+    gitcommitFile  = {fg = zephyr.dark_green};
 
     VistaBracket = {fg=zephyr.grey};
     VistaChildrenNr = {fg=zephyr.orange};
     VistaKind = {fg=zephyr.purpl};
     VistaScope = {fg=zephyr.red};
     VistaScopeKind = {fg=zephyr.blue};
-    VistaTag = {fg=zephyr.green,style='bold'};
+    VistaTag = {fg=zephyr.purple,style='bold'};
     VistaPrefix = {fg=zephyr.grey};
-    VistaColon = {fg=zephyr.green};
+    VistaColon = {fg=zephyr.purple};
     VistaIcon = {fg=zephyr.yellow};
     VistaLineNr = {fg=zephyr.fg};
 
-    GitGutterAdd = {fg=zephyr.green};
+    GitGutterAdd = {fg=zephyr.dark_green};
     GitGutterChange = {fg=zephyr.blue};
     GitGutterDelete = {fg=zephyr.red};
     GitGutterChangeDelete = {fg=zephyr.violet};
 
-    SignifySignAdd = {fg=zephyr.green};
+    SignifySignAdd = {fg=zephyr.dark_green};
     SignifySignChange = {fg=zephyr.blue};
     SignifySignDelete = {fg=zephyr.red};
 
     dbui_tables = {fg=zephyr.blue};
-
-    DefxIconsParentDirectory = {fg=zephyr.orange};
-    Defx_filename_directory = {fg=zephyr.blue};
-    Defx_filename_root = {fg=zephyr.red};
 
     DashboardShortCut = {fg=zephyr.violet};
     DashboardHeader = {fg=zephyr.orange};
@@ -247,15 +253,26 @@ function zephyr.load_syntax()
     CursorWord0 = {bg=zephyr.currsor_bg};
     CursorWord1 = {bg=zephyr.currsor_bg};
 
-    NvimTreeFolderName = {fg=zephyr.blue};
+    NvimTreeFolderName = {fg=zephyr.bracket};
     NvimTreeRootFolder = {fg=zephyr.red};
     NvimTreeSpecialFile = {fg=zephyr.fg,bg=zephyr.none,stryle='NONE'};
 
     TelescopeBorder = {fg=zephyr.teal};
     TelescopePromptBorder = {fg=zephyr.blue}
   }
-  return syntax
+  return plugin_syntax
 end
+
+local async_load_plugin
+
+async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function ()
+  zephyr.terminal_color()
+  local syntax = zephyr.load_plugin_syntax()
+  for group,colors in pairs(syntax) do
+    zephyr.highlight(group,colors)
+  end
+  async_load_plugin:close()
+end))
 
 function zephyr.get_zephyr_color()
   return zephyr
@@ -269,13 +286,11 @@ function zephyr.colorscheme()
   vim.o.background = 'dark'
   vim.o.termguicolors = true
   vim.g.colors_name = 'zephyr'
-
-  zephyr.terminal_color()
   local syntax = zephyr.load_syntax()
-
   for group,colors in pairs(syntax) do
     zephyr.highlight(group,colors)
   end
+  async_load_plugin:send()
 end
 
 zephyr.colorscheme()
