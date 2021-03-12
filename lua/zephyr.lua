@@ -24,7 +24,7 @@ local zephyr = {
 
   red = '#e95678';
 
-  magenta = '#d16d9e';
+  redwine = '#d16d9e';
   orange = '#D98E48';
   yellow = '#f0c674';
 
@@ -35,7 +35,7 @@ local zephyr = {
   cyan = '#4ad2e0';
   blue = '#51afef';
   violet = '#af87d7';
-  purple = '#b877db',
+  magenta = '#c678dd',
   teal = '#1abc9c';
   grey = '#928374';
   brown = '#c78665';
@@ -136,10 +136,10 @@ function zephyr.load_syntax()
     Float = {fg=zephyr.brown};
     PreProc = {fg=zephyr.violet};
     PreCondit = {fg=zephyr.violet};
-    Include = {fg=zephyr.purple};
+    Include = {fg=zephyr.violet};
     Define = {fg=zephyr.violet};
-    Conditional = {fg=zephyr.violet};
-    Repeat = {fg=zephyr.violet};
+    Conditional = {fg=zephyr.magenta};
+    Repeat = {fg=zephyr.magenta};
     Keyword = {fg=zephyr.green};
     Typedef = {fg=zephyr.red};
     Exception = {fg=zephyr.red};
@@ -149,11 +149,11 @@ function zephyr.load_syntax()
     Tag = {fg=zephyr.orange};
     Label = {fg=zephyr.orange};
     Structure = {fg=zephyr.orange};
-    Operator = {fg=zephyr.magenta};
+    Operator = {fg=zephyr.redwine};
     Title = {fg=zephyr.orange,style='bold'};
     Special = {fg=zephyr.yellow};
     SpecialChar = {fg=zephyr.yellow};
-    Type = {fg=zephyr.yellow};
+    Type = {fg=zephyr.teal};
     Function = {fg=zephyr.yellow};
     String = {fg=zephyr.light_green};
     Character = {fg=zephyr.green};
@@ -183,7 +183,7 @@ function zephyr.load_plugin_syntax()
     vimCommentTitle = {fg=zephyr.grey,style='bold'};
     vimLet = {fg=zephyr.orange};
     vimVar = {fg=zephyr.cyan};
-    vimFunction = {fg=zephyr.magenta};
+    vimFunction = {fg=zephyr.redwine};
     vimIsCommand = {fg=zephyr.fg};
     vimCommand = {fg=zephyr.blue};
     vimNotFunc = {fg=zephyr.violet,style='bold'};
@@ -213,9 +213,9 @@ function zephyr.load_plugin_syntax()
     VistaKind = {fg=zephyr.purpl};
     VistaScope = {fg=zephyr.red};
     VistaScopeKind = {fg=zephyr.blue};
-    VistaTag = {fg=zephyr.purple,style='bold'};
+    VistaTag = {fg=zephyr.magenta,style='bold'};
     VistaPrefix = {fg=zephyr.grey};
-    VistaColon = {fg=zephyr.purple};
+    VistaColon = {fg=zephyr.magenta};
     VistaIcon = {fg=zephyr.yellow};
     VistaLineNr = {fg=zephyr.fg};
 
@@ -230,10 +230,10 @@ function zephyr.load_plugin_syntax()
 
     dbui_tables = {fg=zephyr.blue};
 
-    DashboardShortCut = {fg=zephyr.violet};
+    DashboardShortCut = {fg=zephyr.magenta};
     DashboardHeader = {fg=zephyr.orange};
     DashboardCenter = {fg=zephyr.blue};
-    DashboardFooter = {fg=zephyr.grey};
+    DashboardFooter = {fg=zephyr.bracket,style='bold'};
 
     LspDiagnosticsSignError = {fg=zephyr.red};
     LspDiagnosticsSignWarning = {fg=zephyr.yellow};
