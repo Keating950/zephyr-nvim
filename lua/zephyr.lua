@@ -33,7 +33,7 @@ local zephyr = {
   dark_green = '#98be65';
 
   cyan = '#36d0e0';
-  blue = '#42a8ed';
+  blue = '#61afef';
   violet = '#b294bb';
   magenta = '#c678dd',
   teal = '#1abc9c';
@@ -170,8 +170,8 @@ function zephyr.load_syntax()
 
     DashboardShortCut = {fg=zephyr.magenta};
     DashboardHeader = {fg=zephyr.orange};
-    DashboardCenter = {fg=zephyr.blue};
-    DashboardFooter = {fg=zephyr.bracket,style='bold'};
+    DashboardCenter = {fg=zephyr.cyan};
+    DashboardFooter = {fg=zephyr.yellow,style='bold'};
   }
   return syntax
 end
@@ -228,6 +228,10 @@ function zephyr.load_plugin_syntax()
     GitGutterChange = {fg=zephyr.blue};
     GitGutterDelete = {fg=zephyr.red};
     GitGutterChangeDelete = {fg=zephyr.violet};
+
+    GitSignsAdd = {fg=zephyr.dark_green};
+    GitSignsChange = {fg=zephyr.blue};
+    GitSignsDelete = {fg=zephyr.red};
 
     SignifySignAdd = {fg=zephyr.dark_green};
     SignifySignChange = {fg=zephyr.blue};
